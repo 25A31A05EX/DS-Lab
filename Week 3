@@ -1,0 +1,134 @@
+1. Write a cpp code to demonstrate class and object
+#include <iostream>
+using namespace std;
+class student
+{
+private:
+    int roll;
+    string name;
+public:
+    void read(int x, string y)
+    {
+        roll = x;
+        name = y;
+    }
+
+    void print()
+    {
+        cout << "Roll no is: " << roll << endl;
+        cout << "Name is: " << name;
+    }
+};
+int main()
+{
+    student s1;
+    int rno;
+    string n;
+    cout << "Enter roll no and name: ";
+    cin >> rno >> n;
+    s1.read(rno, n);
+    s1.print();
+    return 0;
+}
+
+2.Write a cpp code to implement constructor and destructor
+#include <iostream>
+using namespace std;
+
+class student {
+private:
+    int roll;
+    string name;
+public:
+    student(int x, string y) : roll(x), name(y) {}
+    void display() {
+        cout << "roll no is: " << roll << endl << "name is: " << name << endl;
+    }
+};
+
+int main() {
+    student s1(7, "Mahesh");
+    student s2(1, "Prabhas");
+    s1.display();
+    s2.display();
+    return 0;
+}
+
+3.Write a cpp code to implement a linear search or sequential search
+#include <iostream>
+using namespace std;
+int main(){
+int n,i,key,flag=0;
+cout<<"Enter size  of an array and key element";
+cin>>n>>key;
+int a[n];
+cout<<"Enter array elements";
+for(i=0;i<n;i++)
+{
+cin>>a[i];
+if(a[i] == key){
+cout<<"Search element found at "<<i+1<<location";
+flag=1;
+break;
+}
+}
+if(!flag)
+cout<<key<<" element is not found";
+return 0;
+}
+
+4.Write a cpp code to identify no.of occurences of a search key using linear search or sequential search
+#include <iostream>
+using namespace std;
+int main(){
+int n,i,key,count=0;
+cout<<"Enter size  of an array and key element";
+cin>>n>>key;
+int a[n];
+cout<<"Enter array elements";
+for(i=0;i<n;i++)
+{
+cin>>a[i];
+if(a[i] == key){
+cout<<"Search element found at "<<i+1<<location";
+count++;
+}
+}
+if(count==0)
+cout<<key<<" element is not found";
+else
+cout<<"Key element found<<count<<" times";
+return 0;
+}
+
+5.Write a c++ code to implement binary search
+#include <iostream>
+using namespace std;
+int main(){
+int n,i,key,mid;
+bool status = 0;
+cout<<"Enter size  of an array and key element";
+cin>>n>>key;
+int a[n],low=0,high=n-1;
+cout<<"Enter array elements";
+for(i=0;i<n;i++)
+cin>>a[i];
+while(low<=high)
+{
+mid=(low+high)/2;
+if(a[mid]==key)
+{
+cout<<key<<" element found at "<<mid<<" location";
+status=true;
+break;
+}
+else if(a[mid]<key)
+low=mid+1;
+else
+high=mid-1;
+}
+if(!status)
+cout<<key<<" element not found";
+return 0;
+}
+
